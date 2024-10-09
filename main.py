@@ -179,6 +179,7 @@ def selection_in_sidebar(df_h):
 
 def main():
     df = cf.main_dataframe()             #csvからデータフレームに取り込み
+
     hole = hole_selection()              #選択するホール番号
     df_h = cf.dataframe_by_hole(df,hole) #holeに関する情報にスライスし、データフレーム作成する。
 

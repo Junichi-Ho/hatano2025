@@ -16,7 +16,12 @@ def green_image(holenum,pfile): #ホールごとのイメージの取り込み
 
 @st.cache_data 
 def main_dataframe(): # Main Dataframe CSVファイルの読み込み
-    df = pd.read_csv("20240503_HatanoScore.csv")
+    # Excelファイルを読み込む
+    df = pd.read_excel("240406_hatano.xlsm", sheet_name="ToCSV", header=0)
+    
+    # ヘッダーを文字列に変換
+    df.columns = df.columns.map(str)
+    
     df["Date"] = pd.to_datetime(df["Date"], format="mixed")
 
     # YearとMonthを抽出

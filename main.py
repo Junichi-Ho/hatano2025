@@ -171,7 +171,7 @@ def selection_in_sidebar(df_h):
     # 年と月でフィルタリングするオプション
     for time_unit in ["y", "m"]:
         unit_list = list(df_h[time_unit].unique())
-        default_list = ["24","23"] if time_unit == "y" else unit_list
+        default_list = ["25","24"] if time_unit == "y" else unit_list
         selected_units = st.sidebar.multiselect(f"{time_unit}でFilterling", unit_list, default=default_list)
         df_h = df_h[df_h[time_unit].isin(selected_units)]
 

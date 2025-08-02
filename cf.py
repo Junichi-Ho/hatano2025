@@ -16,8 +16,8 @@ def green_image(holenum,pfile): #ホールごとのイメージの取り込み
 
 @st.cache_data 
 def main_dataframe(): # Main Dataframe CSVファイルの読み込み
-    # Excelファイルを読み込む
-    df = pd.read_excel("240406_hatano.xlsm", sheet_name="ToCSV", header=0)
+    # CSVファイルを読み込む（Shift_JISエンコーディング）
+    df = pd.read_csv("Hatanoscore.csv", header=0, encoding='shift_jis')
     
     # ヘッダーを文字列に変換
     df.columns = df.columns.map(str)
